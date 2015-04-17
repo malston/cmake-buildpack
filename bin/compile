@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
+echo "-----> Installing cmake"
+
+export buildpack_path=$(dirname $(dirname $0))
+
+# change to the the BUILD_DIR ($1)
+cd $1
+
+# untar the binary to the directory we want
+tar -C $1 -xvf $buildpack_path/cmake.tgz >/dev/null 2>&1
+
+echo $PATH
